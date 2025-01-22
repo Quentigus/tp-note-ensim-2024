@@ -1,0 +1,22 @@
+@if (hero) {
+  <div class="score">
+
+    @if (afficherVotes) {
+      <button (click)="clickVote(pointsParVote, $event)"
+              [title]="'Ajouter ' + pointsParVote + ' point(s)'">
+        +
+      </button>
+    }
+
+    <span class="value">{{hero.score}}</span>
+
+    @if (afficherVotes) {
+      <button (click)="clickVote(0-pointsParVote, $event)"
+              [disabled]="hero.score === 0"
+              [title]="'Enlever ' + pointsParVote + ' point(s)'">
+        -
+      </button>
+    }
+
+  </div>
+}

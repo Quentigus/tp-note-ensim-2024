@@ -1,0 +1,28 @@
+@if (hero) {
+
+    <!-- Affichage complet pour la liste des héros -->
+    <a class="hero" [routerLink]="['/heros', hero.id]">
+
+      <img src="https://placehold.co/600x400/A32633/FFFFFF/png" [alt]="'Image de ' + hero.nom">
+
+      <div class="details">
+
+        <div class="nom">
+          {{hero.nom}}
+        </div>
+
+        @if (hero.enRepos) {
+          <div>
+            En repos ⛱
+          </div>
+        }
+
+      </div>
+
+      <!-- Ce sous composant affiche le score du héro passé en paramètre et modifie son score en interne -->
+      <app-hero-score [hero]="hero"
+                      [pointsParVote]="2"> <!-- On peut changer le nombre de points gagnés ou perdus en le passant au composant -->
+      </app-hero-score>
+
+    </a>
+}

@@ -1,0 +1,44 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                //
+// Ce fichier est en format SASS, il est compilé en CSS par Angular                               //
+//   => Vous pouvez voir le résultat en collant ce code ici : https: //sass-lang.com/playground/  //
+//                                                                                                //
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+form {
+  margin-bottom: 1rem;
+}
+
+.hero {
+  position: relative;
+
+  &.repos {
+    opacity: .6;
+  }
+
+  & + .hero {
+    margin-top: 1rem;
+  }
+
+    button {
+      position: absolute;
+      right: 6rem;
+      bottom: 0;
+      margin: 0;
+
+
+      font-family: "Chakra Petch", serif;
+      background-color: var(--red-color);
+      color: white;
+      border: 0;
+      padding: .5rem 1rem;
+      border-top-left-radius: .5rem;
+      border-top-right-radius: .5rem;
+
+      &:hover {
+        filter: brightness(90%);
+        cursor: pointer;
+      }
+    }
+}

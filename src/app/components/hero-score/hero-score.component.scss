@@ -1,0 +1,26 @@
+.score {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 4rem;
+
+  button {
+    border: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background: none;
+    color: var(--gray-color);
+
+    &:not([disabled]):hover {
+      color: var(--red-color);
+      cursor: pointer;
+    }
+  }
+
+  .value {
+    font-family: "Bungee", serif;
+    color: var(--red-color);
+    font-size: 2rem;
+    margin: .2rem 0;
+  }
+}
