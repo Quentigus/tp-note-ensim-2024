@@ -1,10 +1,10 @@
-import {AsyncPipe, NgClass} from '@angular/common';
-import {Component, inject} from '@angular/core';
-import {HeroComponent} from "../../components/hero/hero.component";
-import {HerosService} from '../../services/heros.service';
-import {FormsModule} from '@angular/forms';
-import {FiltrerEnReposPipe} from "../../pipes/filtrer-en-repos.pipe";
-import {Hero} from '../../models/hero';
+import { AsyncPipe, NgClass } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HeroComponent } from "../../components/hero/hero.component";
+import { Hero } from '../../models/hero';
+import { FiltrerEnReposPipe } from "../../pipes/filtrer-en-repos.pipe";
+import { HerosService } from '../../services/heros.service';
 
 @Component({
   selector: 'app-heros-liste',

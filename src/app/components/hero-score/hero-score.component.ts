@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Hero} from '../../models/hero';
+import { Component, Input } from '@angular/core';
+import { Hero } from '../../models/hero';
 
 @Component({
   selector: 'app-hero-score',
@@ -9,7 +9,7 @@ import {Hero} from '../../models/hero';
 })
 export class HeroScoreComponent {
 
-  @Input({required: true}) hero?: Hero;
+  @Input({ required: true }) hero?: Hero;
 
   @Input() afficherVotes = true;
 

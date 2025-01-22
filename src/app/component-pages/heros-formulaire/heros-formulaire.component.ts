@@ -1,14 +1,12 @@
 import { Component, inject } from '@angular/core';
-import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import {Router} from '@angular/router';
-import {HerosService} from '../../services/heros.service';
-import {JsonPipe} from '@angular/common';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { HerosService } from '../../services/heros.service';
 
 @Component({
   selector: 'app-heros-formulaire',
   imports: [
-    ReactiveFormsModule,
-    JsonPipe
+    ReactiveFormsModule
   ],
   templateUrl: './heros-formulaire.component.html',
   styleUrl: './heros-formulaire.component.scss'

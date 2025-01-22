@@ -1,8 +1,8 @@
-import {AsyncPipe, DatePipe, UpperCasePipe} from '@angular/common';
-import {Component, inject} from '@angular/core';
-import {RouterLink} from '@angular/router';
-import {Top5HeroPipe} from '../../pipes/top5-hero.pipe';
-import {HerosService} from '../../services/heros.service';
+import { AsyncPipe, DatePipe, UpperCasePipe } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { Top5HeroPipe } from '../../pipes/top5-hero.pipe';
+import { HerosService } from '../../services/heros.service';
 
 @Component({
   selector: 'app-accueil',
