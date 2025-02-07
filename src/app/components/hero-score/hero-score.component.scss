@@ -1,0 +1,31 @@
+.score {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 4rem;
+
+  &.horizontal {
+    // Affichage des éléments en ligne horizontale et à l'envers (pour avoir le "-" à gauche et le "+" à droite)
+    flex-direction: row-reverse;
+  }
+
+  button {
+    border: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background: none;
+    color: var(--gray-color);
+
+    &:not([disabled]):hover {
+      color: var(--red-color);
+      cursor: pointer;
+    }
+  }
+
+  .value {
+    font-family: "Bungee", serif;
+    color: var(--red-color);
+    font-size: 2rem;
+    margin: .2rem 0;
+  }
+}

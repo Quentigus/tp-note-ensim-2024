@@ -1,0 +1,51 @@
+.center {
+  // La taille de l'élément est de 100% - 50px (la taille du header qui est fixée ci-dessous)
+  height: calc(100% - 50px);
+
+  // On positionne le contenu de "center" au ... centre en utilisant flex
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: var(--gray-color);
+
+    &:hover {
+      color: var(--dark-color);
+    }
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  ul {
+    list-style: none;
+    margin: .5rem 0 0 0;
+    padding: 0;
+  }
+
+}
+
+
+footer {
+  height: 50px; // On force une hauteur pour faciliter le calcul de hauteur du reste de la page (pour démonstration, il existe plus propre)
+
+  // On positionne le footer en bas de la page facilement ce combo (position + top)
+  position: sticky;
+  top: 100%;
+
+  // Le footer est aussi en flex pour faciliter le placement du texte (pas de gestion de padding/margin et donc de hauteur approximative)
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  // Design
+  padding: 0 1rem;
+  background: var(--red-color);
+  color: var(--white-color);
+}

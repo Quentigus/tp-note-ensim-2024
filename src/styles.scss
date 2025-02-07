@@ -1,0 +1,92 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                   //
+// Le style de ce fichier est utilisable dans toute l'application (et même sur le index.html)        //
+//                                                                                                   //
+// Souvent, on l'utilise pour :                                                                      //
+//   => écraser l'affichage de base de HTML (un "reset css")                                         //
+//   => mettre à disposition des classes "utilitaires" au lieu de les dupliquer dans les composants  //
+//                                                                                                   //
+// IMPORTANT : Si vous écrivez du code ici, il faut être le plus précis possible pour les sélecteurs //
+//   afin de maitriser au maximum leur application afin d'avoir à éviter d'écrire du CSS             //
+//   pour l'annuler                                                                                  //
+//                                                                                                   //
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+html {
+  // Définition de variables pour éviter de dupliquer les couleurs un peu partout
+  //   - Elles peuvent être utiliséesavec la fonction "var" => exemple "var(--red-color)"
+  //   - Elles peuvent être surchargées dans des sélecteurs plus précis (ex : dark/light mode, mais le noms doivent rester logiques)
+  --red-color: rgb(163, 38, 51);
+  --dark-red-color: rgb(163, 38, 51);
+  --black-color: rgb(32, 37, 44);
+  --gray-color: rgba(32, 37, 44, 0.7);
+  --light-gray-color: rgba(32, 37, 44, 0.2);
+  --white-color: #FFFFFF;
+}
+
+html,
+body {
+  // On enlève les margin de base des pages HTML (tout autour de la page)
+  margin: 0;
+  padding: 0;
+
+  // On change le mode de calcul des padding/margin/border, comme vu en cours, pour éviter que les enfants dépassent de leurs parents
+  box-sizing: border-box;
+
+  // On renseigne une police par défaut sur le site (copier/coller de Google Fonts https://fonts.google.com/)
+  font-family: "Chakra Petch", serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--black-color);
+}
+
+/*
+  Petit TIP pour si vous souhaitez faire une UI qui prend tout la hauteur de la page
+    Dans le cas présent, on souhaite que la navigation prenne une "height: 100%" et cela est possible que si TOUS ses parents sont en "height: 100%"
+    html > body > app-root > #app-conteneur
+    => Voir en dessous pour le cas des balises des composants (<app-xxx>)
+ */
+html,
+body,
+#app-conteneur {
+  width: 100%;
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  // Application d'une autre police pour les titres qui seront en rouge par défaut
+  font-family: "Bungee", serif;
+  color: var(--red-color);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+/*
+  Petit TIP 2, pour éviter que les balises des composants (en "display: inline" par défaut) vous bloque dans votre design vous pouvez (pas obligatoirement)
+    les mettre en "display: contents" pour "qu'elles ne soient plus dans interprétées le DOM" (la vraie explication est ici : https://developer.mozilla.org/fr/docs/Web/CSS/display#display_contents)
+    => Cela implique qu'il n'est plus possible d'y positionner du CSS => il faut le mettre sur un élément parent ou dans son DOM
+ */
+app-root, app-navigation {
+  display: contents;
+}
+
+
+
+/////////////////////////////////////////////////////////////////////
+//      Utilitaires (classes utilisables dans les composants)      //
+/////////////////////////////////////////////////////////////////////
+
+.red {
+  color: var(--red-color);
+}
+
+.bold {
+  font-weight: 600;
+}

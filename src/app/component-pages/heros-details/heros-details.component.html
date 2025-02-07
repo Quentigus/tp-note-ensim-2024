@@ -1,0 +1,23 @@
+@if (hero) {
+  <h2>
+    {{hero.nom}}
+
+    @if (hero.enRepos) {
+      <span title="Héro en repos">⛱</span>
+    }
+
+  </h2>
+
+  <!-- Ce sous composant affiche le score du héro passé en paramètre et envoi un événement à chaque changement (+X ou -X) -->
+  <div class="hero-score">
+
+    Score
+
+    <!-- On réutilise le composant d'affichage de score avec un affichage horizontal -->
+    <app-hero-score [hero]="hero" horizontal></app-hero-score>
+
+  </div>
+}
+@else {
+  <h2>Héro non trouvé</h2>
+}

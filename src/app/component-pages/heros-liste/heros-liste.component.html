@@ -1,0 +1,36 @@
+<h2>Liste des héros</h2>
+
+<form>
+  <input id="checkbox-repos" type="checkbox"
+         name="enRepos"
+         [(ngModel)]="afficherEnRepos"> <!-- Utilisation du template-driven plus simple pour ce besoin avec un seul champ -->
+
+  <!-- En mettant un "id" sur le champ et un "for" sur le label, cela rattache les 2 éléments et le clic sur le <label> change la valeur du <input> -->
+  <label for="checkbox-repos">
+        Afficher les héros en repos
+  </label>
+
+</form>
+
+<!--
+  On s'abonne à l'observable avec le pipe "async" pour éviter de faire des subscribe dans le TS
+    (on peut car on a pas besoin de manipuler la liste dans le TS)
+
+    Pour le filtrage, on utilise un pipe qui va recevoir la liste complète et ne retourner que les héros à afficher, en fonction du "afficherEnRepos" (2ème paramètre)
+-->
+@for (hero of (heros$ | async)! | filtrerEnRepos: afficherEnRepos; track hero.id) {
+
+  <div class="hero" [ngClass]="{'repos': hero.enRepos}">
+
+    <!-- En délègue l'affichage du héro au sous composant -->
+    <app-hero [hero]="hero"/>
+
+    <!--
+      Mais il n'est pas obligatoire de mettre le bouton de suppression dans le composant "app-hero"
+      Seule cette page permet la suppression, cela évite de déclarer un Output ou de devoir injecter le service dans le sous-composant
+     -->
+    <button (click)="supprimer(hero)">Renvoyer</button>
+
+  </div>
+
+}

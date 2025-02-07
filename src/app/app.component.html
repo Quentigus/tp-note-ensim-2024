@@ -1,0 +1,19 @@
+<!-- Permet d'avoir un conteneur pour aider à la mise en forme de la page (ici, la navigation à gauche) -->
+<div id="app-conteneur">
+
+  <app-navigation></app-navigation>
+
+  <!--
+    Un autre conteneur pour appliquer le CSS de la mise en forme depuis ce composant
+    Car on ne sait pas comment se seront les écrans et ce n'est pas aux écrans de savoir s'afficher dans l'application
+    (sinon, on perd le côté réutilisable des composants et on ne sait jamais)
+
+    => On met une balise "main" pour indiquer que c'est la partie importante de notre application
+  -->
+  <main>
+
+    <!-- C'est ici qu'on souhaite afficher les composants des différentes routes -->
+    <router-outlet></router-outlet>
+
+  </main>
+</div>
