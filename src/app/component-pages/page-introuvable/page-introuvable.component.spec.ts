@@ -1,23 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PageIntrouvableComponent } from './page-introuvable.component';
+import {PageIntrouvableComponent} from './page-introuvable.component';
 
 describe('PageIntrouvableComponent', () => {
-  let component: PageIntrouvableComponent;
-  let fixture: ComponentFixture<PageIntrouvableComponent>;
+    let component: PageIntrouvableComponent;
+    let fixture: ComponentFixture<PageIntrouvableComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [PageIntrouvableComponent]
-    })
-    .compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            imports: [PageIntrouvableComponent]
+        })
+            .compileComponents();
 
-    fixture = TestBed.createComponent(PageIntrouvableComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(PageIntrouvableComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });
