@@ -1,42 +1,40 @@
 form {
+    .champ {
+        & + .champ {
+            margin-top: 2rem;
+        }
 
-  .champ {
+        label {
+            display: block;
+        }
 
-    & + .champ {
-      margin-top: 2rem;
+        input {
+            margin-top: 0.2rem;
+            display: block;
+            border: 1px solid var(--black-color);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            padding: 0.3rem 0.5rem;
+
+            &.ng-dirty.ng-invalid {
+                border-color: var(--red-color);
+                border-width: 2px;
+            }
+        }
     }
-
-    label {
-      display: block;
-    }
-
-    input {
-      margin-top: .2rem;
-      display: block;
-      border: 1px solid var(--black-color);
-      border-radius: .5rem;
-      font-size: 1rem;
-      padding: .3rem .5rem;
-
-      &.ng-dirty.ng-invalid {
-        border-color: var(--red-color);
-        border-width: 2px;
-      }
-    }
-  }
 
     button {
-      margin-top: 1rem;
-      font-family: "Chakra Petch", serif;
-      background-color: var(--red-color);
-      color: white;
-      border: 0;
-      padding: .5rem 1rem;
-      border-radius: .5rem;
+        margin-top: 1rem;
+        font-family: "Chakra Petch", serif;
+        background-color: var(--red-color);
+        color: white;
+        border: 0;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
 
-      &:hover {
-        filter: brightness(90%);
-        cursor: pointer;
-      }
+        &:hover {
+            filter: brightness(90%);
+            cursor: pointer;
+        }
     }
 }

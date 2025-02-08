@@ -1,24 +1,21 @@
 @if (hero) {
-  <div class="score" [ngClass]="{horizontal}">
+<div class="score" [ngClass]="{horizontal}">
 
     @if (afficherVotes) {
-      <!-- Bouton de vote qui ajoute des points -->
-      <button (click)="clickVote(pointsParVote, $event)"
-              [title]="'Ajouter ' + pointsParVote + ' point(s)'">
+    <!-- Bouton de vote qui ajoute des points -->
+    <button (click)="clickVote($event)" [title]="'Ajouter ' + pointsParVote + ' point(s)'">
         +
-      </button>
+    </button>
     }
 
     <span class="value">{{hero.score}}</span>
 
     @if (afficherVotes) {
-      <!-- Bouton de vote qui enlève des points -->
-      <button (click)="clickVote(-pointsParVote, $event)"
-              [disabled]="hero.score === 0"
-              [title]="'Enlever ' + pointsParVote + ' point(s)'">
+    <!-- Bouton de vote qui enlève des points -->
+    <button (click)="clickVote($event, -pointsParVote)" [disabled]="hero.score === 0" [title]="'Enlever ' + pointsParVote + ' point(s)'">
         -
-      </button>
+    </button>
     }
 
-  </div>
+</div>
 }

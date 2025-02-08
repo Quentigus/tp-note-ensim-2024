@@ -1,33 +1,33 @@
 <div class="center">
 
-  <h1 class="red">TOP 5</h1>
+    <h1 class="red">TOP 5</h1>
 
-  <ul>
-      @for (hero of (heros$ | async) ?? [] | top5Hero; track hero.id) {
+    <ul>
+        @for (hero of (heros$ | async) ?? [] | top5Hero; track hero.id) {
         <li>
-          <a [routerLink]="['/heros', hero.id]">
-            <b>{{hero.nom}}</b> - {{hero.score}} point(s)
-          </a>
+            <a [routerLink]="['/heros', hero.id]">
+                <b>{{hero.nom}}</b> - {{hero.score}} point(s)
+            </a>
         </li>
-      }
-  </ul>
+        }
+    </ul>
 
 </div>
 
 <footer>
 
-  <span>
-    Application développée par
-    <b>
-      <!-- On utilise le "pipe" "uppercase" pour mettre un texte en majuscule -->
-      {{'Nom' | uppercase}}
-      Prénom
-    </b>
-  </span>
+    <span>
+        Application développée par
+        <b>
+            <!-- On utilise le "pipe" "uppercase" pour mettre un texte en majuscule -->
+            {{'Nom' | uppercase}}
+            Prénom
+        </b>
+    </span>
 
-  <span>
-    <!-- Le pipe "date" permet de formater une date (Date, timestamp, etc...) en spécifiant un format de sortie -->
-    {{date | date: 'dd/MM/yyyy'}}
-  </span>
+    <span>
+        <!-- Le pipe "date" permet de formater une date (Date, timestamp, etc...) en spécifiant un format de sortie -->
+        {{date | date: 'dd/MM/yyyy'}}
+    </span>
 
 </footer>

@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 import {Hero} from '../models/hero';
 
 /**
@@ -10,21 +10,21 @@ import {Hero} from '../models/hero';
  * * **Héros en repos affichés :** `item of list | filtrerEnRepos: false`
  */
 @Pipe({
-  name: 'filtrerEnRepos'
+    name: 'filtrerEnRepos'
 })
 export class FiltrerEnReposPipe implements PipeTransform {
 
-  transform(heros: Hero[], afficherEnRepos: boolean = true): Hero[] {
-    if (!heros) {
-      // Sécurité : si on a pas de héro en entrée, on retourne une liste vide (pour éviter les erreurs de type NullPointer)
-      return [];
+    transform(heros: Hero[], afficherEnRepos: boolean = true): Hero[] {
+        if (!heros) {
+            // Sécurité : si on a pas de héro en entrée, on retourne une liste vide (pour éviter les erreurs de type NullPointer)
+            return [];
+        }
+        else if (afficherEnRepos) {
+            // On retourne tous les héros
+            return heros;
+        }
+        // On retourne uniquement les héros qui NE SONT PAS en repos
+        return [...heros].filter((h) => !h.enRepos);
     }
-    else if (afficherEnRepos) {
-      // On retourne tous les héros
-      return heros;
-    }
-    // On retourne uniquement les héros qui NE SONT PAS en repos
-    return [...heros].filter((h) => !h.enRepos);
-  }
 
 }

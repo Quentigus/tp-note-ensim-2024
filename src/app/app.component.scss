@@ -6,19 +6,19 @@
 //  "overflow" du main (cf. sélecteur ci-deesous)
 
 #app-conteneur {
-  display: flex;
+    display: flex;
 
-  main {
-    // On donne un poids de "1" (comme il y a pas d'autre élément avec un poids et que la navigation a une "width', il prend toute la place restante)
-    flex-grow: 1;
+    main {
+        // On donne un poids de "1" (comme il y a pas d'autre élément avec un poids et que la navigation a une "width', il prend toute la place restante)
+        flex-grow: 1;
 
-    // Avec un overflow "auto", un scroll est affiché si le contenu de l'élément dépasse sa taille
-    //  => Comme tous les parents sont en "height: 100%", ils ne peuvent pas dépasser de la fenêtre et donc pas avoir de scroll
-    //  => En mettant un overflow "auto" ici, la scroll ne peut être qu'ici
-    // On a donc pas la navigation qui bouge
-    overflow-y: auto;
+        // Avec un overflow "auto", un scroll est affiché si le contenu de l'élément dépasse sa taille
+        //  => Comme tous les parents sont en "height: 100%", ils ne peuvent pas dépasser de la fenêtre et donc pas avoir de scroll
+        //  => En mettant un overflow "auto" ici, la scroll ne peut être qu'ici
+        // On a donc pas la navigation qui bouge
+        overflow-y: auto;
 
-    // On positionne un padding ici pour garder une marge autour des différentes pages
-    padding: 1rem;
-  }
+        // On positionne un padding ici pour garder une marge autour des différentes pages
+        padding: 1rem;
+    }
 }

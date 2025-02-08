@@ -2,16 +2,16 @@
 
 <form [formGroup]="form" (ngSubmit)="enregistrer()">
 
-  <div class="champ">
-    <label>Nom du héro</label>
-    <input type="text" formControlName="nom">
-  </div>
+    <div class="champ">
+        <label>Nom du héro</label>
+        <input type="text" formControlName="nom">
+    </div>
 
-  <div class="champ">
-    <label>En repos</label>
-    <input type="checkbox" formControlName="repos">
-  </div>
+    <div class="champ">
+        <label>En repos</label>
+        <input type="checkbox" formControlName="repos">
+    </div>
 
-  <button type="submit" [disabled]="form.invalid">Enregistrer</button>
+    <button type="submit" [disabled]="form.invalid">Enregistrer</button>
 
 </form>

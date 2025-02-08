@@ -1,55 +1,57 @@
 nav {
-  // On définit la taille de la "nav" ici car "app-navigation" est en "display:contents" => cf. styles.scss)
-  width: 30%; // On souhaite une largeur de 20% de la page
-  min-width: 300px; // La largeur minimimale est de 200px ("width" ignoré en dessous)
-  max-width: 500px; // La largeur maximale est de 300px ("width" ignoré au dessus)
+    // On définit la taille de la "nav" ici car "app-navigation" est en "display:contents" => cf. styles.scss)
+    width: 30%; // On souhaite une largeur de 20% de la page
+    min-width: 300px; // La largeur minimimale est de 200px ("width" ignoré en dessous)
+    max-width: 500px; // La largeur maximale est de 300px ("width" ignoré au dessus)
 
-  // Design
-  background: var(--red-color); // Variable déclarée dans le "styles.scss"
-  text-align: center;
-
-  * {
-    // Le sélecteur "*" (enfants directs ou indirects de nav) permet d'avoir aussi les liens en blanc car cela est plus précis que juste "a" (sélecteur par défaut pour styliser les liens)
-    color: var(--white-color);
-  }
-
-  .nom-appli {
-    display: inline-block;
-    margin: 3rem 0;
+    // Design
+    background: var(--red-color); // Variable déclarée dans le "styles.scss"
+    text-align: center;
 
     * {
-      text-decoration: none;
+        // Le sélecteur "*" (enfants directs ou indirects de nav) permet d'avoir aussi les liens en blanc car cela est plus précis que juste "a" (sélecteur par défaut pour styliser les liens)
+        color: var(--white-color);
     }
-  }
 
-  ul {
-    // On enleve le style par défaut de la liste
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    .nom-appli {
+        display: inline-block;
+        margin: 3rem 0;
 
-    li {
-      padding: 0.5rem;
-      font-size: 1.2rem;
-
-      &.active {
-        font-weight: bold;
-      }
-
-      &:hover {
-        cursor: pointer;
-      }
-
-      a {
-        text-decoration: none; // On supprime le souligné par défaut des liens
-      }
-
-      &:not(.active) { // Balises "li" qui N'ONT PAS la classe "active"
-
-        a:hover { // nav ul li:not(.active) a:hover
-          text-decoration: underline; // On surligne le lien (uniquement au survol du coup de ceux qui ne sont pas dans un )
+        * {
+            text-decoration: none;
         }
-      }
     }
-  }
+
+    ul {
+        // On enleve le style par défaut de la liste
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            padding: 0.5rem;
+            font-size: 1.2rem;
+
+            &.active {
+                font-weight: bold;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            a {
+                text-decoration: none; // On supprime le souligné par défaut des liens
+            }
+
+            &:not(.active) {
+                // Balises "li" qui N'ONT PAS la classe "active"
+
+                a:hover {
+                    // nav ul li:not(.active) a:hover
+                    text-decoration: underline; // On surligne le lien (uniquement au survol du coup de ceux qui ne sont pas dans un )
+                }
+            }
+        }
+    }
 }

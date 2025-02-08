@@ -1,44 +1,44 @@
 .hero {
-  // L'élément qui affiche le héro complete en flex, horizontalement
-  display: flex;
-  align-items: center;
-  justify-content: stretch;
-
-  // Design
-  border: 1px solid var(--red-color);
-  padding: 1rem;
-  text-decoration: none;
-  color: inherit;
-  border-radius: 1.2rem;
-
-  img {
-    width: auto;
-    height: 7rem;
-    margin-right: 1rem;
-    border-radius: 1rem;
-
-    // On peut positionner une taille minimale pour limiter les déplacements des objets au moment de l'affichage de l'image
-    min-width: 210px;
-    min-height: 140px;
-
-    // On peut aussi mettre une couleur ou autre chose pour marquer l'emplacement (faire un "placeholder")
-    background-color: var(--light-gray-color);
-  }
-
-  .details {
-    // Les détails sont regroupés dans un bloc qui lui est vertical
+    // L'élément qui affiche le héro complete en flex, horizontalement
     display: flex;
-    flex-direction: column;
-    flex-grow: 1; // On prend un maximum de place en largeur (au sein du parent)
+    align-items: center;
+    justify-content: stretch;
 
-    .nom {
-      font-family: "Bungee", serif;
-      font-size: 1.3rem;
-      color: var(--red-color);
+    // Design
+    border: 1px solid var(--red-color);
+    padding: 1rem;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 1.2rem;
+
+    img {
+        width: auto;
+        height: 7rem;
+        margin-right: 1rem;
+        border-radius: 1rem;
+
+        // On peut positionner une taille minimale pour limiter les déplacements des objets au moment de l'affichage de l'image
+        min-width: 210px;
+        min-height: 140px;
+
+        // On peut aussi mettre une couleur ou autre chose pour marquer l'emplacement (faire un "placeholder")
+        background-color: var(--light-gray-color);
     }
-  }
 
-  & + .hero {
-    margin-top: 1rem;
-  }
+    .details {
+        // Les détails sont regroupés dans un bloc qui lui est vertical
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1; // On prend un maximum de place en largeur (au sein du parent)
+
+        .nom {
+            font-family: "Bungee", serif;
+            font-size: 1.3rem;
+            color: var(--red-color);
+        }
+    }
+
+    & + .hero {
+        margin-top: 1rem;
+    }
 }

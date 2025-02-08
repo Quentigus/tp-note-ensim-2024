@@ -8,28 +8,28 @@ import {PageIntrouvableComponent} from './component-pages/page-introuvable/page-
 // Il faut essayer d'avoir des routes logiques, souvent, on utilise les mêmes règles que pour les urls des API "RESTful" (comme ici)
 
 export const routes: Routes = [
-  {
-    // La route vide peut être un composant, pas forcément une redirection comme vu en cours
-    path: '',
-    component: AccueilComponent,
-    // pathMatch: 'full'
-  },
-  {
-    path: 'heros',
-    component: HerosListeComponent
-  },
-  {
-    path: 'heros/ajout',
-    component: HerosFormulaireComponent
-  },
-  {
-    // Il faut mettre cette route après la précénte éviter que cette route soit prise par Angular à tord
-    //   et que le paramètre "id" soit égal à "ajout"
-    path: 'heros/:id',
-    component: HerosDetailsComponent
-  },
-  {
-    path: '**',
-    component: PageIntrouvableComponent
-  }
+    {
+        // La route vide peut être un composant, pas forcément une redirection comme vu en cours
+        path: '',
+        component: AccueilComponent
+        // Ici "pathMatch: 'full'" n'est pas nécessaire car il ne s'agit pas d'un "redirectTo"
+    },
+    {
+        path: 'heros',
+        component: HerosListeComponent
+    },
+    {
+        path: 'heros/ajout',
+        component: HerosFormulaireComponent
+    },
+    {
+        // Il faut mettre cette route après la précénte éviter que cette route soit prise par Angular à tord
+        //   et que le paramètre "id" soit égal à "ajout"
+        path: 'heros/:id',
+        component: HerosDetailsComponent
+    },
+    {
+        path: '**',
+        component: PageIntrouvableComponent
+    }
 ];

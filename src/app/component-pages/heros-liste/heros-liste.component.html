@@ -1,14 +1,12 @@
 <h2>Liste des héros</h2>
 
 <form>
-  <input id="checkbox-repos" type="checkbox"
-         name="enRepos"
-         [(ngModel)]="afficherEnRepos"> <!-- Utilisation du template-driven plus simple pour ce besoin avec un seul champ -->
+    <input id="checkbox-repos" type="checkbox" name="enRepos" [(ngModel)]="afficherEnRepos"> <!-- Utilisation du template-driven plus simple pour ce besoin avec un seul champ -->
 
-  <!-- En mettant un "id" sur le champ et un "for" sur le label, cela rattache les 2 éléments et le clic sur le <label> change la valeur du <input> -->
-  <label for="checkbox-repos">
+    <!-- En mettant un "id" sur le champ et un "for" sur le label, cela rattache les 2 éléments et le clic sur le <label> change la valeur du <input> -->
+    <label for="checkbox-repos">
         Afficher les héros en repos
-  </label>
+    </label>
 
 </form>
 
@@ -20,10 +18,10 @@
 -->
 @for (hero of (heros$ | async)! | filtrerEnRepos: afficherEnRepos; track hero.id) {
 
-  <div class="hero" [ngClass]="{'repos': hero.enRepos}">
+<div class="hero" [ngClass]="{'repos': hero.enRepos}">
 
     <!-- En délègue l'affichage du héro au sous composant -->
-    <app-hero [hero]="hero"/>
+    <app-hero [hero]="hero" />
 
     <!--
       Mais il n'est pas obligatoire de mettre le bouton de suppression dans le composant "app-hero"
@@ -31,6 +29,6 @@
      -->
     <button (click)="supprimer(hero)">Renvoyer</button>
 
-  </div>
+</div>
 
 }
